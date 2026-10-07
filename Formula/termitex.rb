@@ -25,18 +25,17 @@ class Termitex < Formula
 
   test do
     require "json"
-    require "base64"
 
     assert_match "termitex #{version}", shell_output("#{bin}/termitex --version")
     request = {
       key: "brew-test", cell_width: 16, cell_height: 34,
       formula: { latex: "x^2", row: 0, col: 0, rows: 1, cols: 12,
-                 display: false, fg: "#ffffff", bg: "#282c34" },
+                 display: false, fg: "#ffffff", bg: "#282c34" }
     }
     response = JSON.parse(pipe_output("#{bin}/termitex --internal-ratex-worker", "#{request.to_json}\n", 0))
     assert_nil response["error"]
     assert_equal "brew-test", response["key"]
-    png = Base64.strict_decode64(response.fetch("png"))
+    png = response.fetch("png").unpack1("m0")
     assert_equal "\x89PNG\r\n\x1a\n".b, png.byteslice(0, 8)
     assert_equal [response.fetch("columns") * 16, 34], png.byteslice(16, 8).unpack("NN")
   end
