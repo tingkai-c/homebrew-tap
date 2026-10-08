@@ -1,8 +1,8 @@
 class Termitex < Formula
   desc "Render LaTeX in live terminal output with native Rust"
   homepage "https://github.com/tingkai-c/TermiTex"
-  url "https://github.com/tingkai-c/TermiTex/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "8f22265e90c55cd862428655cbf7d98c1531e06ee71354612c3b1ca36fddaf78"
+  url "https://github.com/tingkai-c/TermiTex/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "548ae52cc1c205a531c716ee481bbec7222bfec423406f50f22762c7d3052dd3"
   license "MIT"
 
   depends_on "rust" => :build
