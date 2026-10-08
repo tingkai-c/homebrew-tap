@@ -1,8 +1,8 @@
 class Termitex < Formula
   desc "Render LaTeX in live terminal output with native Rust"
   homepage "https://github.com/tingkai-c/TermiTex"
-  url "https://github.com/tingkai-c/TermiTex/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "4270ca7133e600a8767757878faf046e506215c07e045e1080bb7f75709d99c2"
+  url "https://github.com/tingkai-c/TermiTex/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "a0ae5c3edb0900c8791552e93e2aa6d0261e25e361b83a579ab9e196a8284cdc"
   license "MIT"
 
   depends_on "rust" => :build
@@ -16,7 +16,8 @@ class Termitex < Formula
 
   def caveats
     <<~EOS
-      Run termitex in Ghostty with Codex installed on PATH.
+      Run termitex in a supported Kitty-graphics terminal.
+      Use termitex doctor to check terminal capabilities.
       The default renderer is native RaTeX; Node.js is not required.
       For the optional MathJax backend, use a source checkout:
         https://github.com/tingkai-c/TermiTex#use-mathjax

@@ -1,13 +1,13 @@
 # TermiTex Homebrew tap
 
-Native terminal math rendering for macOS with Ghostty.
+Native terminal math rendering for macOS with supported Kitty-graphics terminals.
 
 ```sh
 brew install tingkai-c/tap/termitex
 termitex
 ```
 
-The formula builds a pinned release from source. Homebrew installs Rust as a build dependency; the installed native renderer does not need Node.js. Ghostty and the CLI you want to wrap (Codex by default) are installed separately.
+The formula builds a pinned release from source. Homebrew installs Rust as a build dependency; the installed native renderer does not need Node.js. Your terminal and the CLI you want to wrap (Codex by default) are installed separately. Run `termitex doctor` to check terminal capabilities.
 
 ```sh
 brew update
